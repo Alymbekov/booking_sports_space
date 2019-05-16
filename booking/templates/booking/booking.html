@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
-    booking contents
+
+    <div>
+
+        {% for field in fields %}
+
+            <h1>{{ field.title }}</h1>
+            <h3>{{ field.description }}</h3>
+            <h5>{{ field.address }}</h5>
+
+        {% endfor %}
+
+        {% for  image in images%}
+            <img src="{{ image.image.url }}" alt="">
+        {% endfor %}
+
+    </div>
+
+
 {% endblock %}
