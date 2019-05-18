@@ -1,0 +1,26 @@
+<h1>Fields</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Pages</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for field in object_list %}
+    <tr>
+    <td>{{ field.name }}</td>
+    <td>{{ field.pages }}</td>
+    <td><a href="{% url "field_view" field.id %}">view</a></td>
+    <td><a href="{% url "field_edit" field.id %}">edit</a></td>
+    <td><a href="{% url "field_delete" field.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "field_new" %}">New</a>

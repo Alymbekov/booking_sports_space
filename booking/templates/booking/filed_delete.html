@@ -1,0 +1,6 @@
+<h1>Field Delete</h1>
+<form method="post">{% csrf_token %}
+    Are yo sure want to delete "{{ object }}"?
+    <input type="submit" value="Submit"/>
+
+</form>
