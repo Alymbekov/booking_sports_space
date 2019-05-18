@@ -7,6 +7,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('', include('booking.urls')),
+    path('accounts/', include('authtools.urls')),
+    path('accounts/', include('users.urls')),
     path('admin/', admin.site.urls),
 
 ]

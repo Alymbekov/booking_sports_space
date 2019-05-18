@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import booking
+from .views import booking, IndexView
 
-
+app_name = 'website'
 
 urlpatterns = [
-    path('booking/', booking, name="booking")
+    path('', IndexView.as_view(), name='index'),
+    path('booking/', booking, name="booking"),
 ]
