@@ -1,7 +1,7 @@
-
+from django.shortcuts import render
 from django.http import HttpResponse
 from booking.models import Field, Image
-
+from django.views.generic import TemplateView
 
 def booking(request):
     fields = Field.objects.all()
@@ -11,6 +11,8 @@ def booking(request):
         'images': image,
     })
 
+class IndexView(TemplateView):
+    template_name = 'website/main.html'
 
 
 
