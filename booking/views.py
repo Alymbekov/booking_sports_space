@@ -1,9 +1,18 @@
-from django.shortcuts import render
 
-# from django.http import HttpResponse
+from django.http import HttpResponse
+from booking.models import Field, Image
 
 
-def index(request):
-    return render(request, 'index.html', {})
+def booking(request):
+    fields = Field.objects.all()
+    image = Image.objects.all()
+    return render(request, 'booking/booking.html', {
+        'fields': fields,
+        'images': image,
+    })
+
+
+
+
 
 # Create your views here.

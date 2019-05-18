@@ -2,5 +2,4 @@ Django>=2
 Pillow
 djangorestframework
 django-filter
-psycopg2
-psycopg2-binary
+
