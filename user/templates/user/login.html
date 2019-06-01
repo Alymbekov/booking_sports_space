@@ -1,0 +1,71 @@
+{% extends 'user/_user.html' %}
+{% load widget_tweaks %}
+
+{% block title %}{% trans 'Войти' %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-6 ml-auto mr-auto">
+
+            <div class="card">
+                <div class="card-header">{% trans 'Войти' %}</div>
+                <div class="card-body">
+                    <form action="" method="post" class="form">
+
+                        {% if form.non_field_errors %}
+                            <div class="non-field-errors alert alert-danger">
+                                {% for err in form.non_field_errors %}
+                                    <p class="form-error">{{ err }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        {% for field in form %}
+
+                            <fieldset class="form-group row mb25 {% if field.errors %}has-error{% endif %}">
+
+                                <div class="col-md-12">
+                                    <label for="{{ field.auto_id }}">
+                                        {{ field.label }}
+                                    </label>
+
+                                    {% if field.errors %}
+                                        {{ field|add_class:'is-invalid' }}
+                                    {% else %}
+                                        {{ field }}
+                                    {% endif %}
+
+                                    {% for err in field.errors %}
+                                        <div class="form-control-feedback invalid-feedback">{{ err }}</div>
+                                    {% endfor %}
+
+                                    <small class="form-text text-muted">
+                                        {{ field.help_text }}
+                                    </small>
+                                </div>
+
+                            </fieldset>
+
+                        {% endfor %}
+
+
+                        <div class="form-actions text-center">
+                            {% csrf_token %}
+                            <button type="submit" role="button" class="btn btn-primary">{% trans 'Войти' %}</button>
+                            &nbsp;&nbsp;
+                            {% trans 'or' %}
+                            <a href="{% url 'user:signup' %}" class="btn btn-link">{% trans 'Регистрация' %}</a>
+                        </div>
+
+                        <div class="form-actions text-center">
+                            <a href="{% url 'user:password-reset' %}"
+                               class="btn btn-link">{% trans 'Забыли пароль?' %}</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}

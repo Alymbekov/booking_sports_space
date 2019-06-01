@@ -1,0 +1,17 @@
+{% extends 'user/_user.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Регистрация' %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-8 ml-auto mr-auto">
+            <div class="alert alert-info">
+                {% blocktrans %}
+                    <h4 class="alert-heading">Ваш аккаунт создан.</h4>
+                    <div>На указаный Вами email отправлено письмо, чтобы подтвердить ваш аккаунт.</div>
+                    <div>Перейдите пожалуйста по ссылке в письме.</div>
+                {% endblocktrans %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
