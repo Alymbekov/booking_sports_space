@@ -1,0 +1,22 @@
+h1 {
+  color: yellow;
+  font-size: 100px;
+}
+
+.container {
+  display: block;
+  width: 700px;
+  height: 700px;
+}
+.items:nth-child(1){
+  float: left;
+  max-width: 70%;
+}
+.items:nth-child(2){
+  float: right;
+  max-width: 70%;
+}
+.items:nth-child(3){
+  float: left;
+  max-width: 70%;
+}
