@@ -1,0 +1,62 @@
+
+{% extends 'user/_user.html' %}
+
+{% block title %}{{ object }}{% endblock %}
+
+{% block content %}
+
+    <div class="row mb-3">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    {% if object.avatar and object.crop310.url %}
+                        <img class="mr-3 rounded-circle"
+                             src="{{ object.crop310.url }}"
+                             alt="{{ object }}">
+                    {% else %}
+                        <img class="mr-3 rounded-circle"
+                             src="{% static '' %}"
+                             alt="{{ object }}">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body">
+
+                    <table class="table table-striped table-sm">
+                        <tr>
+                            <td class="text-right" style="width: 50%"></td>
+                            <th>{{ object }}</th>
+                        </tr>
+                        <tr>
+                            <td class="text-right">joined</td>
+                            <th>{{ object.date_joined|date:"DATE_FORMAT" }}</th>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="row">
+                        {% for sell_product in sell_products %}
+                            <div class="col-3 mb-4">
+                                {% include 'catalog/sell/block/card.html' with object=sell_product %}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

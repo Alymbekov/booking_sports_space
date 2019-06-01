@@ -3,45 +3,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Field Homepage - Start Bootstrap Template</title>
+    <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!-- Custom CSS -->
+
+    <link href="{% static 'css/field-homepage.css' %}" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
 
 
 </head>
 <body>
-    <div class="containet">
-        <div class='row'>
-            <div class='col-md-3'>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Главное</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'booking:create-field' %}">Добавить объект <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"> <a href="{% url 'user:signup' %}" class="btn btn-link">Регистрация</a>
+            </li>
+            <li class="nav-item">
 
-        </div>
-
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
     </div>
-        <p class="lead"Fileds name</p>
-
-        <div class= 'list-group'>
+</nav>
 
 
-         </div>
-    {% for field in fields  %}
-
-         <a href = "a" class='list-group-item' = ({Field.name})</a>
-
-        {% endfor %}
-
-        <div/>
-
-
-    <div/>
+        {% block content %}{% endblock %}
 
 
 
-    {% block content %}{% endblock %}
 
-
-
-    {% block styles %}{% endblock %}
+        {% block styles %}{% endblock %}
 
 </body>
 </html>

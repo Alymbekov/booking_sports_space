@@ -7,4 +7,4 @@ class FieldForm(forms.ModelForm):
 
     class Meta:
         model = Field
-        fields = ('title','description','address')
+        fields = ('title','description','address', 'image')

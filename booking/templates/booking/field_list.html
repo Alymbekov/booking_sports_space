@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <section class="second">
+        <a name="second"></a>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {% for field in object_list %}
+                        <div class="row">
+                            <div class="col">
+
+
+                                <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="..." class="card-img" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <img src="{{ field.image.url }}" class="card-img" alt="" width="800" height="300">
+                                                <h5 class="card-title">{{ field.title }}</h5>
+                                                <p class="card-text">{{ field.description }}</p>
+                                                <p class="card-text"><small class="text-muted">{{ field.create_date }}</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

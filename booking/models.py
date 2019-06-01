@@ -15,6 +15,7 @@ class Field(models.Model):
     address = models.CharField(max_length=255)
     latitude = models.DecimalField(max_digits=19, decimal_places=10,null=True, blank=True)
     longitude = models.DecimalField(max_digits=19, decimal_places=10, null=True, blank=True)
+    image = models.ImageField(upload_to='field/images')
 
     def __str__(self):
         return self.title
