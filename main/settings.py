@@ -126,8 +126,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-AUTH_USER_MODEL = 'user.User'
-
+AUTH_USER_MODEL = 'booking.User'
 
 DEFAULT_FROM_EMAIL = 'cowork.development@gmail.com'
 SERVER_EMAIL = DEFAULT_FROM_EMAIL

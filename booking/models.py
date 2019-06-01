@@ -4,8 +4,15 @@ from django.db.models.signals import pre_save
 from django.utils.text import slugify
 # Create your models here
 
+class User(AbstractUser):
+    full_name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.full_name
+
+
 class Field(models.Model):
-    user = models.ForeignKey('user.User', related_name='fields', on_delete = models.CASCADE)
+    user = models.ForeignKey('User', related_name='fields', on_delete = models.CASCADE)
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True, verbose_name="Описание")
 
