@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db.models import Q
 from django.http import HttpResponse
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
@@ -33,10 +34,21 @@ class FieldCreateView(CreateView):
 
 class FieldList(ListView):
     model = Field
+    template_name = 'booking/field_list.html'
+
+    def get(self, request):
+        search_query = request.GET.get('search', '')
+
+        if search_query:
+            posts = Field.objects.filter(Q(title__icontains=search_query))
+        else:
+            posts = Field.objects.all()
+        return render(request, 'booking/field_list.html', {'results': posts})
 
 
 class FieldView(DetailView):
     model = Field
+    template_name =  'booking/field_detail.html'
 
 
 class FieldUpdate(UpdateView):

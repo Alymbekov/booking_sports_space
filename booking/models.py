@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.shortcuts import reverse
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
 # Create your models here
@@ -8,7 +9,7 @@ class User(AbstractUser):
     full_name = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.full_name
+        return self.username
 
 
 class Field(models.Model):
@@ -26,6 +27,9 @@ class Field(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('booking:field_view', kwargs={'pk': self.pk})
 #
 # titledef pre_save_field_slug(sender, instance, *args, **kwargs):
 #     if not instance.slug

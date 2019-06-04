@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    {% for field in object_list %}
+                    {% for field in results %}
                         <div class="row">
                             <div class="col">
 
@@ -22,6 +22,7 @@
                                                 <h5 class="card-title">{{ field.title }}</h5>
                                                 <p class="card-text">{{ field.description }}</p>
                                                 <p class="card-text"><small class="text-muted">{{ field.create_date }}</small></p>
+                                                <a href="{{ field.get_absolute_url }}">Link</a>
                                             </div>
                                         </div>
                                     </div>
