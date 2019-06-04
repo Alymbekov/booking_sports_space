@@ -1,0 +1,130 @@
+.group-btn, .green-btn, .white-btn {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 0.5em 1em;
+    margin: 0 0.5em;
+    font-size: 0.9em;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  
+  .green-btn {
+    border-color: #219B43;
+    background-color: #219B43;
+  }
+  
+  .group-btn {
+    border-color: #219B43;
+    margin: 0 0;
+  }
+  
+  header {
+    background-image: url(../../media/header_img.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  header .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4em 0 2em 0;
+  }
+  header p {
+    text-align: center;
+    width: 50%;
+    font-size: 1.2em;
+  }
+  header .img-arrow {
+    margin: 9em 0 0 0;
+    padding: 0.2em;
+    width: 3em;
+    height: 3em;
+  }
+  header .img-arrow:hover {
+    padding: 0;
+    transition: width 1s ease 0s;
+    width: 3.2em;
+    height: 3.2em;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 3em 4em 3em;
+  }
+  
+  .advantages {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 5%;
+    color: black;
+    text-align: center;
+  }
+  .advantages p {
+    width: 60%;
+    padding: 0 10% 0 15%;
+  }
+  .advantages .green-seperate {
+    display: inline;
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .advantages {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .green-seperate {
+      transform: rotate(90deg);
+    }
+  }
+  .about-background {
+    background-image: url("../../media/about_img.jpg");
+    background-size: cover;
+    z-index: 0;
+    background-attachment: fixed;
+  }
+  
+  .about {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .about .about-content {
+    padding: 2em 0 5em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .about .about-content h1 {
+    width: 70%;
+    text-align: center;
+  }
+  .about .about-content p {
+    text-align: center;
+    width: 50%;
+    font-size: 1.2em;
+  }
+  .about .btn-group {
+    width: 70%;
+    padding: 3em 0;
+  }
+  
+  footer {
+    color: black;
+  }
+  
+  body {
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  
+  /*# sourceMappingURL=index.css.map */
+  
