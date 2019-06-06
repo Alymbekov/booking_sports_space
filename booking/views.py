@@ -10,6 +10,10 @@ from booking.models import Field, Image
 from django.urls import reverse_lazy
 
 
+def index(request):
+    return render(request, 'booking/index.html', {})
+
+
 def booking(request):
     fields = Field.objects.all()
     image = Image.objects.all()

@@ -4,6 +4,7 @@ from . import views
 
 app_name = 'booking'
 urlpatterns = [
+    path('index/', views.index, name= "index"),
     path('booking/', booking, name="booking"),
     path('add/', views.FieldCreateView.as_view(), name="create-field"),
     path('', views.FieldList.as_view(), name='field_list'),
