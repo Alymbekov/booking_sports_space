@@ -1,4 +1,40 @@
-<h1>Field Details</h1>
-<h2>Name: {{object.title}}</h2>
-<h2></h2>
-{#<a href="{% url 'detail' %}#}
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2> {{ object.title }}</h2>
+                <div class="row">
+                    <div class="col">
+                        <img src="{{ object.image.url }}" class="card-img" alt="...">
+                    </div>
+                    <div class="col">
+                        {{ object.address }}
+
+                        <div>
+                            {% if field.allday %}
+                                круглосуточно
+                            {% elif field.open_time and field.close_time %}
+                                ot {{ field.open_time }} do {{ field.close_time }}
+                            {% endif %}
+                        </div>
+                        <div>душ {% if field.shower %}yes{% else %}no{% endif %}</div>
+                        <div>раздевалка {% if field.changing_room %}yes{% else %}no{% endif %}</div>
+                        <div>парковка {% if field.parking %}yes{% else %}no{% endif %}</div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{ object.description }}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+{% endblock %}
