@@ -8,6 +8,11 @@
     font-family: "Source Sans Pro", sans-serif;
   }
   
+  .green-btn:hover {
+      cursor:pointer;
+  }
+
+
   .group-btn:hover, .green-btn:hover, .white-btn:hover {
     opacity: 0.9;
   }
