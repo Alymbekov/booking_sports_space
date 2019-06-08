@@ -1,14 +1,12 @@
-{% load static  %}
-
-
-
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700&display=swap" rel="stylesheet">
     <title>Index</title>
 </head>
@@ -39,7 +37,7 @@
             </div>
             <img class="green-seperate" src="{% static 'images/Vector 3.svg' %}" alt="">
             <div class="advantages-block">
-                <img  src="{% static 'Vector.svg' %}" alt="ball">
+                <img  src="{% static 'images/Vector.svg' %}" alt="ball">
                 <h4>Футбольные занятия</h4>
                 <p>Выбирайте для себя и своих детей спортивные занятия, тренировки и секции</p>
             </div>
@@ -68,11 +66,47 @@
         </div>
         <div class="howto">
             <h1>Как записаться или арендовать поле?</h1>
-            <div class="howto-content"></div>
+            <div class="howto-content">
+                <div>
+                    <img src="{% static 'images/search.svg' %}" alt="search">
+                    <h4>1. Находите</h4>
+                    <p>футбольные занятия, поля или клубы</p>
+                </div>
+                <img class="green-seperate" src="{% static 'images/Vector 3.svg' %}" alt="green-line">
+                <div>
+                    <img src="{% static 'images/click.svg' %}" alt="click">
+                    <h4>2. Записывайтесь </h4>
+                    <p>на занятия, событие и бронируйте площадки</p>
+                </div>
+                <img class="green-seperate" src="{% static 'images/Vector 3.svg' %}" alt="green-line">
+                <div>
+                    <img src="{% static 'images/wallet.svg' %}" alt="wallet">
+                    <h4>3. Оплачивайте</h4>
+                    <p>онлайн или на месте</p>
+                </div>
+                <img class="green-seperate" src="{% static 'images/Vector 3.svg' %}" alt="green-line">
+                <div>
+                    <img src="{% static 'images/playing.svg' %}" alt="playing">
+                    <h4>4. Играйте</h4>
+                    <p>и получайте заряд бодрости и энергии</p>
+                </div>
+            </div>
         </div>
     </main>
     <footer>
-        <h1>hello</h1>
+        <div class="icons">
+            <img src="{% static 'images/001-facebook.svg' %}" alt="facebook-icon">
+            <img src="{% static 'images/002-instagram.svg' %}" alt="instagram-icon">
+            <img src="{% static 'images/003-vk.svg' %}" alt="vk-icon">
+        </div>
+        <ul class="footer-menu">
+            <li class="footer-menu-item"><a href="#">О нас</a></li>
+            <li class="footer-menu-item"><a href="#">Контакты</a></li>
+            <li class="footer-menu-item"><a href="#">Вопросы</a></li>
+            <li class="footer-menu-item"><a href="#">Добавить поле</a></li>
+        </ul>
+        <span>© 2019</span>
     </footer>
 </body>
 </html>
+{% endblock %}
