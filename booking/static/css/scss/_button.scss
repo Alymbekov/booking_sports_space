@@ -1,0 +1,36 @@
+$primary-green:#219B43;
+
+%button {
+    border: 1px solid white;
+    background-color: transparent;
+    padding: 0.5em 1em;
+    margin: 0 0.5em;
+    font-size: 0.9em;
+    font-family: 'Source Sans Pro', sans-serif;
+    a{
+        color: white;
+    }
+}
+
+%button:hover{
+    opacity: 0.9;
+}
+
+.white-btn{
+    @extend %button;
+}
+
+.green-btn{
+    @extend %button;
+    border-color: $primary-green;
+    background-color: $primary-green;
+    a{
+        color: white;
+    }
+}
+
+.group-btn{
+    @extend %button;
+    border-color: $primary-green;
+    margin: 0 0;
+}
