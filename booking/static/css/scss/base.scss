@@ -1,0 +1,18 @@
+@import 'button';
+@import 'header';
+@import 'advantages';
+@import 'about';
+@import 'howto';
+@import 'footer';
+
+body{
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    a{
+        text-decoration: none;
+    }
+}
+
+$primary-green:#219B43;

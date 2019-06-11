@@ -1,0 +1,22 @@
+$primary-green:#219B43;
+
+footer{
+    margin: 0;
+    padding: 0;
+    background-color: $primary-green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .footer-menu-item{
+        display: inline;
+        padding: 0.2em 0.5em; 
+        list-style-type: none;
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+    .icons img{
+        padding: 1em 0.5em;
+    }
+}
