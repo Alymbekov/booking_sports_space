@@ -23,9 +23,9 @@
                                                 ot {{ field.open_time }} do {{ field.close_time }}
                                             {% endif %}
                                         </div>
-                                        <div>душ {% if field.shower %}yes{% else %}no{% endif %}</div>
-                                        <div>раздевалка {% if field.changing_room %}yes{% else %}no{% endif %}</div>
-                                        <div>парковка {% if field.parking %}yes{% else %}no{% endif %}</div>
+                                        <div>душ {% if field.shower %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</div>
+                                        <div>раздевалка {% if field.changing_room %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</div>
+                                        <div>парковка {% if field.parking %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</div>
                                     </div>
                                 </div>
                             </div>
