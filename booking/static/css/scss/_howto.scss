@@ -1,0 +1,38 @@
+$primary-green:#219B43; 
+
+.howto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    .howto-content{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 5%;
+        text-align: center;
+        p{
+            width: 60%;
+            padding: 0 10% 0 15%;
+        }
+        div{
+            width: 25%;
+            box-sizing: border-box;
+        }
+        .green-seperate{
+            display: inline;
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    .howto-content{
+      display: flex;
+      flex-direction: column;   
+    }
+    .green-seperate{
+        transform: rotate(90deg);
+    }
+    h1{
+        width: 70%;
+    }
+  }
