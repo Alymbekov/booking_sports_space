@@ -1,14 +1,15 @@
 from django.shortcuts import render
 from django.db.models import Q
-from django.http import HttpResponse
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from booking.forms import FieldForm
+from django.core.paginator import Paginator
 
 from booking.models import Field, Image
 from django.urls import reverse_lazy
+
 
 
 def index(request):
@@ -39,26 +40,34 @@ class FieldCreateView(CreateView):
 class FieldList(ListView):
     model = Field
     template_name = 'booking/field_list.html'
+    ordering = ['-create_date']
+    paginate_by = 2
 
-    def get(self, request):
-        search_query = request.GET.get('search', '')
+    def get_queryset(self):
+        queryset = super().get_queryset()
 
-        if search_query:
-            posts = Field.objects.filter(Q(title__icontains=search_query))
-        else:
-            posts = Field.objects.all()
-        return render(request, 'booking/field_list.html', {'results': posts})
+        query = self.request.GET.get('search')
+        if query:
+            queryset = queryset.filter(title__icontains=query)
+
+        return queryset
 
 
 class FieldView(DetailView):
     model = Field
     template_name =  'booking/field_detail.html'
+    ordering = ['-create_date']
+    paginate_by = 5
+
+
 
 
 class FieldUpdate(UpdateView):
     model = Field
     fields = ['title', 'pages']
     success_url = reverse_lazy('field_list')
+    ordering = ['-create_date']
+    paginate_by = 5
 
 
 class FieldDelete(DeleteView):

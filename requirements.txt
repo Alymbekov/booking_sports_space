@@ -2,4 +2,4 @@ Django>=2
 Pillow
 djangorestframework
 django-filter
-
+django-widget-tweaks

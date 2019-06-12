@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    {% for field in results %}
+                    {% for field in object_list %}
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
@@ -14,7 +14,8 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title"><a href="{{ field.get_absolute_url }}">{{ field.title }}</a></h5>
+                                        <h5 class="card-title"><a
+                                                href="{{ field.get_absolute_url }}">{{ field.title }}</a></h5>
                                         <div>
                                             {% if field.allday %}
                                                 круглосуточно
@@ -22,18 +23,34 @@
                                                 ot {{ field.open_time }} do {{ field.close_time }}
                                             {% endif %}
                                         </div>
-                                        <div>душ {% if field.shower %}yes{% else %}no{% endif %}</div>
-                                        <div>раздевалка {% if field.changing_room %}yes{% else %}no{% endif %}</div>
-                                    <div>парковка {% if field.parking %}yes{% else %}no{% endif %}</div>
+                                        <div>душ {% if field.shower %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</div>
+                                        <div>раздевалка {% if field.changing_room %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</div>
+                                        <div>парковка {% if field.parking %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                     {% endfor %}
+                    <div class="row">
+                        <div class="col">
+
+                            <nav aria-label="...">
+                                <ul class="pagination justify-content-center">
+
+                                    {% for page in paginator.page_range %}
+                                            <li class="page-item"><a class="page-link" href="{% url 'booking:field_list' %}?page={{ page }}">{{ page }}</a></li>
+                                    {% endfor %}
+
+                                </ul>
+                            </nav>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="col"></div>
             </div>
+
         </div>
     </section>
 {% endblock %}

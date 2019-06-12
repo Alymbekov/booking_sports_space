@@ -1,14 +1,13 @@
 from django.urls import path
-from .views import booking
-from . import views
+from .views import *
 
 app_name = 'booking'
 urlpatterns = [
-    path('', views.index, name= "index"),
+    path('', index, name= "index"),
     path('booking/', booking, name="booking"),
-    path('add/', views.FieldCreateView.as_view(), name="create-field"),
-    path('field-list/', views.FieldList.as_view(), name='field_list'),
-    path('view/<int:pk>/', views.FieldView.as_view(), name='field_view'),
-    path('edit/<int:pk>/', views.FieldUpdate.as_view(), name='field_edit'),
-    path('delete/<int:pk>/', views.FieldDelete.as_view(), name='field_delete')
+    path('add/', FieldCreateView.as_view(), name="create-field"),
+    path('field-list/', FieldList.as_view(), name='field_list'),
+    path('view/<int:pk>/', FieldView.as_view(), name='field_view'),
+    path('edit/<int:pk>/', FieldUpdate.as_view(), name='field_edit'),
+    path('delete/<int:pk>/', FieldDelete.as_view(), name='field_delete')
 ]

@@ -23,7 +23,7 @@ def logout(request):
     return redirect('/user/')
 
 class LoginView(auth_views.LoginView):
-    template_name = 'profile/login.html'
+    template_name = 'user/login.html'
 
 class SignUpView(CreateView):
     template_name = 'user/signup.html'

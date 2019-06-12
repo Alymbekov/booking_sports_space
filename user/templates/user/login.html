@@ -1,5 +1,6 @@
 {% extends 'user/_user.html' %}
 {% load widget_tweaks %}
+{% load i18n %}
 
 {% block title %}{% trans 'Войти' %}{% endblock %}
 
@@ -57,10 +58,7 @@
                             <a href="{% url 'user:signup' %}" class="btn btn-link">{% trans 'Регистрация' %}</a>
                         </div>
 
-                        <div class="form-actions text-center">
-                            <a href="{% url 'user:password-reset' %}"
-                               class="btn btn-link">{% trans 'Забыли пароль?' %}</a>
-                        </div>
+
                     </form>
                 </div>
             </div>
