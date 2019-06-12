@@ -18,6 +18,8 @@ $primary-green:#219B43;
 
 .white-btn{
     @extend %button;
+        color: white;
+    
 }
 
 .green-btn{
