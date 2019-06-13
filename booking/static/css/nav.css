@@ -1,13 +1,18 @@
 nav {
+  margin-bottom: 2.5em;
   background-color: #219B43;
 }
 nav a {
   color: white;
 }
+nav .navbar-nav li .white-btn {
+  background-color: transparent;
+  border: 1px solid white;
+  margin: 0.3em;
+  padding: 0.1em 0.5em;
+}
 
 .burger-menu {
-  width: 3em;
-  height: 3em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,145 +26,16 @@ nav a {
 }
 
 .stick {
-  width: 80px;
-  height: 8px;
+  width: 2.5em;
+  height: 0.2em;
   border-radius: 4px;
-  margin-bottom: 15px;
+  margin-bottom: 0.5em;
   background-color: white;
   display: inline-block;
 }
 
 .stick:last-child {
   margin-bottom: 0px;
-}
-
-.stick-1.open {
-  animation: stick-1-open 0.6s ease-out forwards;
-}
-
-.stick-2.open {
-  animation: stick-2-open 0.6s linear forwards;
-}
-
-.stick-3.open {
-  animation: stick-3-open 0.6s linear forwards;
-}
-
-@keyframes stick-1-open {
-  0% {
-    width: 80px;
-  }
-  40% {
-    background-color: white;
-    width: 8px;
-    transform: translate(40px, 0px);
-  }
-  75%, 80% {
-    width: 8px;
-    transform: translate(40px, -50px);
-    animation-timing-function: cubic-bezier(0, 1, 1, 1);
-  }
-  100% {
-    background-color: #ff1456;
-    width: 8px;
-    transform: translate(35px, 46px);
-  }
-}
-@keyframes stick-2-open {
-  80% {
-    background-color: white;
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-  100% {
-    background-color: #ff1456;
-    transform: translate(8px, 0px) rotate(40deg);
-  }
-}
-@keyframes stick-3-open {
-  80% {
-    background-color: white;
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-  100% {
-    background-color: #ff1456;
-    transform: translate(8px, -23px) rotate(-40deg);
-  }
-}
-.stick-1.close {
-  width: 8px;
-  transform: translate(27px, 26px);
-  animation: stick-1-close 0.6s ease-out forwards;
-}
-
-.stick-2.close {
-  transform: translate(0px, 0px) rotate(40deg);
-  animation: stick-2-close 0.6s ease-out forwards;
-}
-
-.stick-3.close {
-  transform: translate(0px, -23px) rotate(-40deg);
-  animation: stick-3-close 0.6s ease-out forwards;
-}
-
-@keyframes stick-1-close {
-  0%, 70% {
-    width: 0px;
-  }
-  100% {
-    width: 80px;
-    transform: translate(0, 0);
-  }
-}
-@keyframes stick-2-close {
-  0% {
-    background-color: #ff1456;
-    width: 80px;
-  }
-  20% {
-    background-color: #ff1456;
-    width: 8px;
-    transform: translate(0, 0px) rotate(40deg);
-  }
-  40% {
-    background-color: white;
-    width: 0px;
-  }
-  65% {
-    transform: translate(0, -70px);
-    animation-timing-function: cubic-bezier(0, 1, 1, 1);
-  }
-  80% {
-    width: 0px;
-  }
-  100% {
-    width: 80px;
-    transform: translate(0, 0px);
-  }
-}
-@keyframes stick-3-close {
-  0% {
-    background-color: #ff1456;
-    width: 80px;
-  }
-  20% {
-    background-color: #ff1456;
-    width: 8px;
-    transform: translate(0, -23px) rotate(-40deg);
-  }
-  40% {
-    background-color: white;
-  }
-  65% {
-    transform: translate(0, -93px);
-    animation-timing-function: cubic-bezier(0, 1, 1, 1);
-  }
-  90% {
-    width: 8px;
-  }
-  100% {
-    width: 80px;
-    transform: translate(0, 0px);
-  }
 }
 
 /*# sourceMappingURL=nav.css.map */
