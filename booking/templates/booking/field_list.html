@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-
-    <section class="second">
-        <a name="second"></a>
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -10,17 +7,18 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="{{ field.image.url }}" class="card-img" alt="...">
+                                    <img src="{{ field.image.url }}" class="card-img" alt="....">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title"><a
-                                                href="{{ field.get_absolute_url }}">{{ field.title }}</a></h5>
+                                        <h5 class="card-title">
+                                            <a href="{{ field.get_absolute_url }}">{{ field.title }}</a></h5>
                                         <div>
+                                            <img src="{{ backwardtime.svg }}" alt="">
                                             {% if field.allday %}
                                                 круглосуточно
                                             {% elif field.open_time and field.close_time %}
-                                                ot {{ field.open_time }} do {{ field.close_time }}
+                                                от {{ field.open_time }} до {{ field.close_time }}
                                             {% endif %}
                                         </div>
                                         <div>душ {% if field.shower %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</div>
@@ -32,10 +30,8 @@
                         </div>
 
                     {% endfor %}
-                    <div class="row">
-                        <div class="col">
 
-                            <nav aria-label="...">
+                            <nav class="bg-light" aria-label="...">
                                 <ul class="pagination justify-content-center">
 
                                     {% for page in paginator.page_range %}
@@ -44,11 +40,7 @@
 
                                 </ul>
                             </nav>
-
-                        </div>
-                    </div>
                 </div>
-                <div class="col"></div>
             </div>
 
         </div>
