@@ -14,16 +14,16 @@
                                         <h5 class="card-title">
                                             <a href="{{ field.get_absolute_url }}">{{ field.title }}</a></h5>
                                         <div>
-                                            <img src="{{ backwardtime.svg }}" alt="">
+                                        <img class="card-icon" src="../../static/images/backwardtime.svg" alt="">
                                             {% if field.allday %}
                                                 круглосуточно
                                             {% elif field.open_time and field.close_time %}
                                                 от {{ field.open_time }} до {{ field.close_time }}
                                             {% endif %}
                                         </div>
-                                        <div>душ {% if field.shower %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</div>
-                                        <div>раздевалка {% if field.changing_room %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</div>
-                                        <div>парковка {% if field.parking %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</div>
+                                        <div>{% if field.shower %}<img class="card-icon" src="../../static/images/check-mark.svg" alt="">{% else %}<img class="card-icon" src="../../static/images/health-normal.svg" alt="">{% endif %}душ</div>
+                                        <div>{% if field.changing_room %}<img class="card-icon" src="../../static/images/check-mark.svg" alt="">{% else %}<img class="card-icon" src="../../static/images/health-normal.svg" alt="">{% endif %}раздевалка</div>
+                                        <div>{% if field.parking %}<img class="card-icon" src="../../static/images/check-mark.svg" alt="">{% else %}<img class="card-icon" src="../../static/images/health-normal.svg" alt="">{% endif %}парковка</div>
                                     </div>
                                 </div>
                             </div>

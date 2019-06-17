@@ -6,9 +6,6 @@
   font-size: 0.9em;
   font-family: "Source Sans Pro", sans-serif;
 }
-.group-btn a, .green-btn a, .white-btn a {
-  color: white;
-}
 
 .group-btn:hover, .green-btn:hover, .white-btn:hover {
   opacity: 0.9;
@@ -21,14 +18,13 @@
 .green-btn {
   border-color: #219B43;
   background-color: #219B43;
-}
-.green-btn a {
   color: white;
 }
 
 .group-btn {
   border-color: #219B43;
   margin: 0 0;
+  color: white;
 }
 
 header {
@@ -134,6 +130,10 @@ nav {
 }
 .about .btn-group {
   padding: 3em 0;
+  color: white;
+}
+.about .btn-group a button {
+  color: white !important;
 }
 
 @media only screen and (max-width: 500px) {
@@ -207,8 +207,17 @@ body {
   color: white;
   font-family: "Source Sans Pro", sans-serif;
 }
+body button {
+  color: white !important;
+}
 body a {
   text-decoration: none;
+}
+body a button {
+  color: white !important;
+}
+body main .about-background .about .btn-group .group-btn a button {
+  color: white;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -7,9 +7,6 @@ $primary-green:#219B43;
     margin: 0 0.5em;
     font-size: 0.9em;
     font-family: 'Source Sans Pro', sans-serif;
-    a{
-        color: white;
-    }
 }
 
 %button:hover{
@@ -26,13 +23,12 @@ $primary-green:#219B43;
     @extend %button;
     border-color: $primary-green;
     background-color: $primary-green;
-    a{
-        color: white;
-    }
+    color: white;
 }
 
 .group-btn{
     @extend %button;
     border-color: $primary-green;
     margin: 0 0;
+    color: white;
 }

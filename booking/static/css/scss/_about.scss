@@ -29,7 +29,12 @@
     }
     .btn-group{
         padding: 3em 0;
+        color: white;
+    a button{
+        color: white !important;
     }
+    }
+    
 }
 
 @media only screen and (max-width: 500px){

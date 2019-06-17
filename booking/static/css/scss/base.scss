@@ -6,12 +6,33 @@
 @import 'footer';
 
 body{
+    button{
+        color: white !important;
+    }
     padding: 0px;
     margin: 0px;
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
     a{
         text-decoration: none;
+    }
+    a button{
+        color: white !important;
+    }
+    main{
+        .about-background{
+            .about{
+                .btn-group{
+                    .group-btn{
+                        a{
+                            button{
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
